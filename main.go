@@ -1,16 +1,17 @@
 package main
 
 import (
-	"net/http"
-
-	"github.com/Guleri24/go-userapi-rest/database"
-	"github.com/Guleri24/go-userapi-rest/routes"
-	"github.com/julienschmidt/httprouter"
+	"Github.com/Guleri24/userapi/configs"
+	"Github.com/Guleri24/userapi/routes"
+	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
-	router := httprouter.New()
-	database.MongodbAtlasSetup()
-	routes.Routes(router)
-	http.ListenAndServe(":6969", router)
+	app := fiber.New()
+
+	configs.ConnectDB()
+
+	routes.UserRoute(app)
+
+	app.Listen(":6000")
 }
