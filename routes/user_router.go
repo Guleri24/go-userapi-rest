@@ -9,4 +9,7 @@ func UserRoute(app *fiber.App) {
 	route := app.Group("/api/v1")
 	route.Post("/user", controllers.CreateUser)
 	route.Get("/user/:userId", controllers.GetAUser)
+	route.Put("/user/:userId", controllers.EditAUser)
+	route.Delete("/user/:userId", controllers.DeleteAUser)
+	route.Get("/users", controllers.GetAllUsers)
 }

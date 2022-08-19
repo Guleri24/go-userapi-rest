@@ -13,5 +13,21 @@ func EnvMongoURI() string {
 		log.Fatal("Error loading .env file")
 	}
 
-	return os.Getenv("MONGOURI")
+	return os.Getenv("MONGO_URI")
+}
+
+func EnvMongoDatabaseName() string {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+	return os.Getenv("MONGO_DATABASE_NAME")
+}
+
+func EnvMongoCollectionName() string {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+	return os.Getenv("MONGO_COLLECTION_NAME")
 }
