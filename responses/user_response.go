@@ -1,6 +1,6 @@
 package responses
 
-import "github.com/gofiber/fiber"
+import "github.com/gofiber/fiber/v2"
 
 type UserResponse struct {
 	Status  int        `json:"status"`

@@ -4,6 +4,8 @@ go 1.18
 
 require github.com/gofiber/fiber v1.14.6
 
+require gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22 // indirect
+
 require (
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
