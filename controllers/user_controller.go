@@ -34,11 +34,12 @@ func CreateUser(c *fiber.Ctx) error {
 	}
 
 	newUser := models.User{
-		Id:       primitive.NewObjectID(),
-		Name:     user.Name,
-		Location: user.Location,
-		Title:    user.Title,
-	}
+		Id:          primitive.NewObjectID(),
+		Name:        user.Name,
+		DOB:         user.DOB,
+		Address:     user.Address,
+		Description: user.Description,
+		CreatedAt:   primitive.NewObjectID().Timestamp()}
 
 	result, err := userCollection.InsertOne(ctx, newUser)
 	if err != nil {
@@ -87,7 +88,7 @@ func EditAUser(c *fiber.Ctx) error {
 			responses.UserResponse{Status: http.StatusBadRequest, Message: "error", Data: &fiber.Map{"data": validationErr.Error()}})
 	}
 
-	update := bson.M{"name": user.Name, "location": user.Location, "title": user.Title}
+	update := bson.M{"name": user.Name, "dob": user.DOB, "address": user.Address, "description": user.Description}
 	result, err := userCollection.UpdateOne(ctx, bson.M{"_id": objId}, bson.M{"$set": update})
 
 	if err != nil {
