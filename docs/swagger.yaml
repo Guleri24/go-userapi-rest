@@ -16,7 +16,7 @@ definitions:
     - dob
     - name
     type: object
-host: localhost:8081
+host: go-userapi-rest.herokuapp.com
 info:
   contact:
     email: support@swagger.io

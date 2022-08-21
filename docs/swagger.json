@@ -14,7 +14,7 @@
         },
         "version": "1.0"
     },
-    "host": "localhost:8081",
+    "host": "go-userapi-rest.herokuapp.com",
     "basePath": "/api/v1",
     "paths": {
         "/user": {
