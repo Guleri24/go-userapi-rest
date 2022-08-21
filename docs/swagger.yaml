@@ -1,0 +1,117 @@
+basePath: /api/v1
+definitions:
+  models.User:
+    properties:
+      address:
+        type: string
+      description:
+        type: string
+      dob:
+        type: string
+      name:
+        type: string
+    required:
+    - address
+    - description
+    - dob
+    - name
+    type: object
+host: localhost:8081
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+  description: REST API for a User Information application in which we create new
+    users, view them, update & delete their information.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: 'User Information RESTful API on Go: Fiber, MongoDB Atlas'
+  version: "1.0"
+paths:
+  /user:
+    post:
+      consumes:
+      - application/json
+      description: Create a new user.
+      parameters:
+      - description: User obj
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses: {}
+      summary: create a new user
+      tags:
+      - User
+  /user/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete user by given ID.
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: delete user by given ID
+      tags:
+      - User
+    get:
+      consumes:
+      - application/json
+      description: Get user by given ID.
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: get user by given ID
+      tags:
+      - User
+    patch:
+      consumes:
+      - application/json
+      description: Update User.
+      parameters:
+      - description: User Id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: User obj
+        in: body
+        name: Body
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses: {}
+      summary: update user
+      tags:
+      - User
+  /users:
+    get:
+      consumes:
+      - application/json
+      description: Get all exists users.
+      produces:
+      - application/json
+      responses: {}
+      summary: get all exists users
+      tags:
+      - Users
+swagger: "2.0"

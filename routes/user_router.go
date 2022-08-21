@@ -1,15 +1,24 @@
 package routes
 
 import (
-	"Github.com/Guleri24/userapi/controllers"
+	"github.com/Guleri24/go-userapi-rest/controllers"
 	"github.com/gofiber/fiber/v2"
 )
 
 func UserRoute(app *fiber.App) {
+	// Create routes group.
 	route := app.Group("/api/v1")
-	route.Post("/user", controllers.CreateUser)
-	route.Get("/user/:userId", controllers.GetAUser)
-	route.Put("/user/:userId", controllers.EditAUser)
-	route.Delete("/user/:userId", controllers.DeleteAUser)
-	route.Get("/users", controllers.GetAllUsers)
+
+	// Routes for Post method:
+	route.Post("/user", controllers.CreateUser) // create a new user
+
+	// Routes for Get method:
+	route.Get("/user/:id", controllers.GetAUser) // get one user by ID
+	route.Get("/users", controllers.GetAllUsers) // get all the users
+
+	// Routes for Patch method:
+	route.Patch("/user/:id", controllers.EditAUser) // update one user by ID
+
+	//Routes for Delete method:
+	route.Delete("/user/:id", controllers.DeleteAUser) // delete one user by ID
 }
