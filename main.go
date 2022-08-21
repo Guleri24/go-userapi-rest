@@ -32,5 +32,5 @@ func main() {
 	routes.UserRoute(app)     // Register routes for app.
 	routes.NotFoundRoute(app) // Register route for 404 Error.
 
-	app.Listen(":8081")
+	app.Listen(":" + configs.Port())
 }
