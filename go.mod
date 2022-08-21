@@ -1,6 +1,6 @@
 module github.com/Guleri24/go-userapi-rest
 
-go 1.19
+go 1.18
 
 require (
 	github.com/gofiber/swagger v0.1.0
