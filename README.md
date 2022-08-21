@@ -1,4 +1,6 @@
 # User Information RESTful API on Go: Fiber, MongoDB Atlas
+![go-userapi-rest](https://user-images.githubusercontent.com/43719098/185801503-b97f94de-7895-4e85-a97d-1e858e6e4fe8.png)
+
 
 ## Description
 REST API for a User Information application in which we create new users, view them, update & delete their information. Here I used a NoSQL database MongoDB for storing the data.
@@ -124,7 +126,7 @@ ________________________________________________________________________________
 ### Get all exists users 
 
 <details>
-    <summary><code>GEt</code> <code><b>/users</b></code> <code>(Get all exists users)</code></summary>
+    <summary><code>GET</code> <code><b>/users</b></code> <code>(Get all exists users)</code></summary>
 
 ##### Parameters
 > none
