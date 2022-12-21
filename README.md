@@ -6,7 +6,7 @@
 REST API for a User Information application in which we create new users, view them, update & delete their information. Here I used a NoSQL database MongoDB for storing the data.
 
 # Hosted on Heroku
-https://go-userapi-rest.herokuapp.com/swagger/index.html
+https://go-userapi-rest.herokuapp.com/swagger/index.html (sadly now I have to pay for heroku -> No longer active :-( 
 
 # Requirements
 
